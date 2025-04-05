@@ -90,6 +90,13 @@
           # system
           system.stateVersion = 6;
           system.configurationRevision = self.rev or self.dirtyRev or null;
+          system.defaults.finder.AppleShowAllFiles = true;
+          system.defaults.finder.FXEnableExtensionChangeWarning = false;
+          system.defaults.finder.QuitMenuItem = true;
+          system.defaults.finder.ShowPathbar = true;
+          system.defaults.finder.ShowStatusBar = true;
+          system.defaults.finder._FXShowPosixPathInTitle = true;
+          system.defaults.finder._FXSortFoldersFirst = true;
           system.defaults.menuExtraClock.Show24Hour = true;
           system.defaults.menuExtraClock.ShowAMPM = false;
           system.defaults.menuExtraClock.ShowDayOfMonth = false;
@@ -109,10 +116,16 @@
             "/System/Applications/launchpad.app"
           ];
           system.defaults.dock.orientation = "right";
-          system.defaults.finder.ShowPathbar = true;
-          system.defaults.finder.ShowStatusBar = true;
+          system.defaults.dock.expose-animation-duration = 0.15;
+          system.defaults.dock.tilesize = 30;
+          system.defaults.dock.wvous-bl-corner = 1;
+          system.defaults.dock.wvous-br-corner = 1;
+          system.defaults.dock.wvous-tl-corner = 1;
+          system.defaults.dock.wvous-tr-corner = 1;
           system.defaults.NSGlobalDomain.AppleInterfaceStyle = "Dark";
           system.defaults.controlcenter.BatteryShowPercentage = true;
+          system.defaults.screencapture.type = "png";
+          system.defaults.screencapture.disable-shadow = true;
           system.activationScripts.extraActivation.text = ''
             softwareupdate --install-rosetta --agree-to-license
           '';
