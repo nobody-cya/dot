@@ -182,36 +182,39 @@
               )
             '';
           home.packages = with pkgs; [
-            bat
-            btop
             curl
-            fastfetch
-            fzf
-            git
-            lsd
             mkalias
             neovim
-            nil
-            nixfmt-rfc-style
-            ripgrep
-            ripgrep-all
-            tmux
             uv
             wget
-            yazi
           ];
           programs.home-manager.enable = true;
-          programs.zsh.enable = true;
-          programs.zsh.enableCompletion = true;
-          programs.zsh.shellAliases.ff = "fastfetch";
-          programs.zsh.shellAliases.ls = "lsd";
-          programs.zsh.shellAliases.tree = "lsd --tree -al";
-          programs.zsh.shellAliases.vim = "nvim";
-          programs.zsh.shellAliases.nv = "nvim";
-          programs.zsh.shellAliases.em = "emacs -nw";
+          programs.bat.enable = true;
+          programs.btop.enable = true;
+          programs.fastfetch.enable = true;
+          programs.fzf.enable = true;
+          programs.fzf.enableZshIntegration = true;
+          programs.git.enable = true;
+          programs.lsd.enable = true;
+          programs.lsd.enableAliases = true;
+          programs.ripgrep.enable = true;
+          programs.ripgrep-all.enable = true;
           programs.starship.enable = true;
           programs.starship.settings.add_newline = false;
           programs.starship.settings.line_break.disabled = true;
+          programs.tmux.enable = true;
+          programs.tmux.aggressiveResize = true;
+          programs.tmux.baseIndex = 1;
+          programs.tmux.disableConfirmationPrompt = true;
+          programs.tmux.mouse = true;
+          programs.yazi.enable = true;
+          programs.yazi.enableZshIntegration = true;
+          programs.zsh.enable = true;
+          programs.zsh.enableCompletion = true;
+          programs.zsh.shellAliases.ff = "fastfetch";
+          programs.zsh.shellAliases.vim = "nvim";
+          programs.zsh.shellAliases.nv = "nvim";
+          programs.zsh.shellAliases.em = "emacs -nw";
         };
     in
     {
