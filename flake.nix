@@ -77,7 +77,7 @@
             "wezterm"
           ];
           homebrew.masApps = { };
-          homebrew.onActivation.cleanup = "none";
+          homebrew.onActivation.cleanup = "uninstall";
           homebrew.onActivation.autoUpdate = false;
           homebrew.onActivation.upgrade = false;
 
@@ -117,7 +117,7 @@
           ];
           system.defaults.dock.orientation = "right";
           system.defaults.dock.expose-animation-duration = 0.15;
-          system.defaults.dock.tilesize = 30;
+          system.defaults.dock.tilesize = 16;
           system.defaults.dock.wvous-bl-corner = 1;
           system.defaults.dock.wvous-br-corner = 1;
           system.defaults.dock.wvous-tl-corner = 1;
