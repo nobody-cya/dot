@@ -32,12 +32,6 @@ config.default_cursor_style = "BlinkingBlock"
 config.animation_fps = 1
 config.cursor_blink_ease_in = "Constant"
 config.cursor_blink_ease_out = "Constant"
-config.window_padding = {
-  left = 8,
-  right = 8,
-  top = 8,
-  bottom = 8,
-}
 config.hide_tab_bar_if_only_one_tab = true
 config.window_close_confirmation = "NeverPrompt"
 
