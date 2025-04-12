@@ -19,6 +19,7 @@
 
 (use-package use-package
   :custom
+  (use-package-verbose t)
   (use-package-always-ensure t)
   (use-package-always-defer t)
   (use-package-expand-minimally t)
@@ -312,12 +313,6 @@
   :config
   (solaire-global-mode))
 
-(use-package dimmer
-  :defer 5
-  :config
-  (dimmer-mode)
-  (setq dimmer-fraction 0.15))
-
 (use-package beacon
   :hook (after-init . beacon-mode)
   :config
@@ -347,8 +342,7 @@
 
 (use-package evil
   :hook
-  (prog-mode . evil-mode)
-  (org-mode . evil-mode)
+  (after-init . evil-mode)
   :init
   (setq evil-want-integration t)
   (setq evil-want-keybinding nil)
@@ -359,6 +353,7 @@
   (setq evil-visual-state-cursor 'hollow))
 
 (use-package evil-indent-plus
+  :after (evil)
   :bind
   (:map evil-inner-text-objects-map
         (("i" . evil-indent-plus-i-indent)
@@ -370,6 +365,7 @@
          ("J" . evil-indent-plus-a-indent-up-down))))
 
 (use-package evil-textobj-line
+  :after (evil)
   :bind
   (:map evil-inner-text-objects-map
         (("l" . evil-inner-line)))
@@ -410,6 +406,7 @@
   :hook (evil-mode . global-evil-visualstar-mode))
 
 (use-package evil-args
+  :after (evil)
   :bind
   (:map evil-normal-state-map
         ("L" . evil-forward-arg)
@@ -556,6 +553,12 @@
 (use-package magit
   :commands (magit))
 
+(use-package esup
+  :commands (esup))
+
+(use-package olivetti
+  :commands (olivetti-mode))
+
 (use-package helpful
   :bind
   (([remap describe-key] . helpful-key)
@@ -577,6 +580,7 @@
   (setq-default lua-indent-close-paren-align nil))
 
 (use-package cmake-mode)
+(use-package go-mode)
 (use-package nix-mode)
 (use-package typescript-mode)
 (use-package yaml-mode)
@@ -584,6 +588,36 @@
 (use-package toml-mode)
 (use-package web-mode)
 (use-package emmet-mode)
+
+(use-package exec-path-from-shell
+  :defer 10
+  :when (memq window-system '(mac ns x))
+  :config
+  (exec-path-from-shell-initialize))
+
+(use-package general
+  :defer 10
+  :config
+  (general-create-definer spc-leader
+    :prefix "SPC"
+    :keymaps 'override
+    :states '(normal visual))
+  (spc-leader
+    "SPC" 'execute-extended-command
+    "tt" 'emacs-init-time
+    "ff" 'find-file
+    "gw" 'avy-goto-word-0
+    "gl" 'avy-goto-line
+    "gt" 'avy-goto-char-timer
+    "fF" 'consult-flymake
+    "fb" 'consult-buffer
+    "fw" 'consult-ripgrep
+    "fW" 'consult-grep
+    "fc" 'consult-theme
+    "fs" 'consult-line
+    "fo" 'consult-outline
+    "wo" 'ace-window
+    "/" 'evilnc-comment-or-uncomment-lines))
 
 (provide 'init)
 ;;; Local Variables:
