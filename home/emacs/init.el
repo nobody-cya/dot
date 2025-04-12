@@ -543,7 +543,10 @@
    ("M-g c" . avy-goto-char-timer)))
 
 (use-package quickrun
-  :commands (quickrun))
+  :commands (quickrun)
+  :config
+  (setq quickrun-focus-p nil)
+  (setq quickrun-truncate-lines nil))
 
 (use-package neotree
   :commands (neotree-toggle)
@@ -574,6 +577,7 @@
   (setq-default lua-indent-close-paren-align nil))
 
 (use-package cmake-mode)
+(use-package nix-mode)
 (use-package typescript-mode)
 (use-package yaml-mode)
 (use-package csv-mode)
