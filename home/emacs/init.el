@@ -111,8 +111,8 @@
   :hook
   (after-init . which-key-mode)
 	:config
-  (setq which-key-idle-delay 0.3)
-  (setq which-key-show-docstrings t))
+  (setq which-key-separator " → " )
+  (setq which-key-idle-delay 0.3))
 
 (use-package simple
   :ensure nil
@@ -176,7 +176,7 @@
   :ensure nil
   :config
   (setq dired-dwim-target t)
-  (setq dired-listing-switches "-alGhv --group-directories-first")
+  (setq dired-listing-switches "-alGhv")
   (setq dired-recursive-copies 'always)
   (setq dired-kill-when-opening-new-dired-buffer t))
 
@@ -272,12 +272,78 @@
   :hook
   (prog-mode . editorconfig-mode))
 
+(use-package loaddefs
+  :ensure nil
+  :hook (after-init . global-tab-line-mode))
+
 (use-package flymake
   :ensure nil
   :hook (prog-mode . flymake-mode)
   :bind
   (("M-n" . flymake-goto-next-error)
    ("M-p" . flymake-goto-prev-error)))
+
+(use-package doom-themes
+  :hook (after-init . (lambda () (load-theme 'doom-tokyo-night t))))
+
+(use-package doom-modeline
+  :defer 5
+  :config
+  (doom-modeline-mode)
+  (setq doom-modeline-height 25)
+  (setq doom-modeline-bar-width 5)
+  (setq doom-modeline-minor-modes t))
+
+(use-package minions
+  :hook (doom-modeline-mode . minions-mode))
+
+(use-package mode-line-bell
+  :hook (doom-modeline-mode . mode-line-bell-mode))
+
+(use-package indent-bars
+  :hook ((prog-mode yaml-mode) . indent-bars-mode)
+  :config
+  (setq indent-bars-color '(highlight :face-fg t :blend 0.225))
+  (setq indent-bars-no-descend-string t)
+  (setq indent-bars-prefer-character t))
+
+(use-package solaire-mode
+  :defer 5
+  :config
+  (solaire-global-mode))
+
+(use-package dimmer
+  :defer 5
+  :config
+  (dimmer-mode)
+  (setq dimmer-fraction 0.15))
+
+(use-package beacon
+  :hook (after-init . beacon-mode)
+  :config
+  (setq beacon-size 50)
+  (setq beacon-blink-duration 1.0)
+  (setq beacon-blink-delay 0.5)
+  (setq beacon-blink-when-window-scrolls t)
+  (setq beacon-blink-when-window-changes t)
+  (setq beacon-blink-when-point-moves t)
+  (setq beacon-blink-when-point-moves-vertically 3)
+  (setq beacon-blink-when-point-moves-horizontally 10))
+
+(use-package colorful-mode
+  :hook (prog-mode . global-colorful-mode))
+
+(use-package nerd-icons-ibuffer
+  :hook (ibuffer-mode . nerd-icons-ibuffer-mode))
+
+(use-package tab-line-nerd-icons
+  :hook (global-tab-line-mode . tab-line-nerd-icons-global-mode))
+
+(use-package nerd-icons-dired
+  :hook (dired-mode . nerd-icons-dired-mode))
+
+(use-package diredfl
+  :hook (dired-mode . diredfl-mode))
 
 (use-package evil
   :hook
@@ -291,6 +357,24 @@
   (setq evil-emacs-state-cursor 'box)
   (setq evil-insert-state-cursor 'bar)
   (setq evil-visual-state-cursor 'hollow))
+
+(use-package evil-indent-plus
+  :bind
+  (:map evil-inner-text-objects-map
+        (("i" . evil-indent-plus-i-indent)
+         ("I" . evil-indent-plus-i-indent-up)
+         ("J" . evil-indent-plus-i-indent-up-down)))
+  (:map evil-outer-text-objects-map
+        (("i" . evil-indent-plus-a-indent)
+         ("I" . evil-indent-plus-a-indent-up)
+         ("J" . evil-indent-plus-a-indent-up-down))))
+
+(use-package evil-textobj-line
+  :bind
+  (:map evil-inner-text-objects-map
+        (("l" . evil-inner-line)))
+  (:map evil-outer-text-objects-map
+        (("l" . evil-a-line))))
 
 (use-package evil-collection
   :defer 2
@@ -314,6 +398,22 @@
         (("gcc" . evilnc-comment-or-uncomment-lines)))
   (:map evil-visual-state-map
         (("gc" . evilnc-comment-or-uncomment-lines))))
+
+(use-package evil-goggles
+  :hook (evil-mode . evil-goggles-mode)
+  :config
+  (setq evil-goggles-pulse t)
+  (setq evil-goggles-duration 1.00)
+  (evil-goggles-use-diff-faces))
+
+(use-package evil-visualstar
+  :hook (evil-mode . global-evil-visualstar-mode))
+
+(use-package evil-args
+  :bind
+  (:map evil-normal-state-map
+        ("L" . evil-forward-arg)
+        ("H" . evil-backward-arg)))
 
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
@@ -436,6 +536,23 @@
    ("M-g M-p" . symbol-overlay-switch-backward)
    ("M-g M-r" . symbol-overlay-remove-all)))
 
+(use-package avy
+  :bind
+  (("M-g l" . avy-goto-line)
+   ("M-g w" . avy-goto-word-0)
+   ("M-g c" . avy-goto-char-timer)))
+
+(use-package quickrun
+  :commands (quickrun))
+
+(use-package neotree
+  :commands (neotree-toggle)
+  :config
+  (setq neo-theme 'nerd-icons))
+
+(use-package magit
+  :commands (magit))
+
 (use-package helpful
   :bind
   (([remap describe-key] . helpful-key)
@@ -443,6 +560,26 @@
    ([remap describe-variable] . helpful-variable)
    ([remap describe-command] . helpful-command)
    ("C-c C-d" . helpful-at-point)))
+
+(use-package git-gutter
+  :hook (prog-mode . global-git-gutter-mode))
+
+(use-package markdown-mode
+  :mode (("README\\.md\\'" . gfm-mode)))
+
+(use-package lua-mode
+  :config
+  (setq-default lua-indent-level 2)
+  (setq-default lua-indent-nested-block-content-align nil)
+  (setq-default lua-indent-close-paren-align nil))
+
+(use-package cmake-mode)
+(use-package typescript-mode)
+(use-package yaml-mode)
+(use-package csv-mode)
+(use-package toml-mode)
+(use-package web-mode)
+(use-package emmet-mode)
 
 (provide 'init)
 ;;; Local Variables:
