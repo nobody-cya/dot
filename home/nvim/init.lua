@@ -228,188 +228,196 @@ require("lazy").setup({
   },
   spec = {
     -- LazyVim --
-    -- {
-    -- 	"LazyVim/LazyVim",
-    -- 	import = "lazyvim.plugins",
-    -- },
-    -- {
-    -- 	"LazyVim/LazyVim",
-    -- 	import = "lazyvim.plugins.extras.editor.aerial",
-    -- },
-    -- {
-    -- 	"LazyVim/LazyVim",
-    -- 	import = "lazyvim.plugins.extras.editor.illuminate",
-    -- },
-    -- {
-    -- 	"LazyVim/LazyVim",
-    -- 	import = "lazyvim.plugins.extras.editor.navic",
-    -- },
-    -- {
-    -- 	"LazyVim/LazyVim",
-    -- 	import = "lazyvim.plugins.extras.editor.overseer",
-    -- },
-    -- {
-    -- 	"LazyVim/LazyVim",
-    -- 	import = "lazyvim.plugins.extras.coding.nvim-cmp",
-    -- },
-    -- {
-    -- 	"LazyVim/LazyVim",
-    -- 	import = "lazyvim.plugins.extras.formatting.black",
-    -- },
-    -- {
-    -- 	"LazyVim/LazyVim",
-    -- 	import = "lazyvim.plugins.extras.formatting.prettier",
-    -- },
-    -- {
-    -- 	"LazyVim/LazyVim",
-    -- 	import = "lazyvim.plugins.extras.lang.clangd",
-    -- },
-    -- {
-    -- 	"LazyVim/LazyVim",
-    -- 	import = "lazyvim.plugins.extras.lang.json",
-    -- },
-    -- {
-    -- 	"LazyVim/LazyVim",
-    -- 	import = "lazyvim.plugins.extras.lang.markdown",
-    -- },
-    -- {
-    -- 	"LazyVim/LazyVim",
-    -- 	import = "lazyvim.plugins.extras.lang.python",
-    -- },
-    -- {
-    -- 	"LazyVim/LazyVim",
-    -- 	import = "lazyvim.plugins.extras.lang.r",
-    -- },
-    -- {
-    -- 	"LazyVim/LazyVim",
-    -- 	import = "lazyvim.plugins.extras.lang.typescript",
-    -- },
-    -- {
-    -- 	"LazyVim/LazyVim",
-    -- 	import = "lazyvim.plugins.extras.lang.yaml",
-    -- },
-    -- {
-    -- 	"LazyVim/LazyVim",
-    -- 	import = "lazyvim.plugins.extras.linting.eslint",
-    -- },
-    -- {
-    -- 	"LazyVim/LazyVim",
-    -- 	import = "lazyvim.plugins.extras.lsp.none-ls",
-    -- },
-    -- {
-    -- 	"LazyVim/LazyVim",
-    -- 	import = "lazyvim.plugins.extras.ui.smear-cursor",
-    -- },
-    -- {
-    -- 	"LazyVim/LazyVim",
-    -- 	import = "lazyvim.plugins.extras.ui.treesitter-context",
-    -- },
+    {
+      "LazyVim/LazyVim",
+      import = "lazyvim.plugins",
+    },
+    {
+      "LazyVim/LazyVim",
+      import = "lazyvim.plugins.extras.dap.core",
+    },
+    {
+      "LazyVim/LazyVim",
+      import = "lazyvim.plugins.extras.editor.aerial",
+    },
+    {
+      "LazyVim/LazyVim",
+      import = "lazyvim.plugins.extras.editor.illuminate",
+    },
+    {
+      "LazyVim/LazyVim",
+      import = "lazyvim.plugins.extras.editor.navic",
+    },
+    {
+      "LazyVim/LazyVim",
+      import = "lazyvim.plugins.extras.editor.overseer",
+    },
+    {
+      "LazyVim/LazyVim",
+      import = "lazyvim.plugins.extras.coding.nvim-cmp",
+    },
+    {
+      "LazyVim/LazyVim",
+      import = "lazyvim.plugins.extras.formatting.black",
+    },
+    {
+      "LazyVim/LazyVim",
+      import = "lazyvim.plugins.extras.formatting.prettier",
+    },
+    {
+      "LazyVim/LazyVim",
+      import = "lazyvim.plugins.extras.lang.clangd",
+    },
+    {
+      "LazyVim/LazyVim",
+      import = "lazyvim.plugins.extras.lang.json",
+    },
+    {
+      "LazyVim/LazyVim",
+      import = "lazyvim.plugins.extras.lang.markdown",
+    },
+    {
+      "LazyVim/LazyVim",
+      import = "lazyvim.plugins.extras.lang.nix",
+    },
+    {
+      "LazyVim/LazyVim",
+      import = "lazyvim.plugins.extras.lang.python",
+    },
+    {
+      "LazyVim/LazyVim",
+      import = "lazyvim.plugins.extras.lang.r",
+    },
+    {
+      "LazyVim/LazyVim",
+      import = "lazyvim.plugins.extras.lang.typescript",
+    },
+    {
+      "LazyVim/LazyVim",
+      import = "lazyvim.plugins.extras.lang.yaml",
+    },
+    {
+      "LazyVim/LazyVim",
+      import = "lazyvim.plugins.extras.linting.eslint",
+    },
+    {
+      "LazyVim/LazyVim",
+      import = "lazyvim.plugins.extras.lsp.none-ls",
+    },
+    {
+      "LazyVim/LazyVim",
+      import = "lazyvim.plugins.extras.ui.treesitter-context",
+    },
     -- AstroNvim --
-    {
-      "AstroNvim/AstroNvim",
-      version = "^5",
-      import = "astronvim.plugins",
-    },
-    {
-      "AstroNvim/astrocommunity",
-      import = "astrocommunity.bars-and-lines.dropbar-nvim",
-    },
-    {
-      "AstroNvim/astrocommunity",
-      import = "astrocommunity.code-runner.overseer-nvim",
-    },
-    {
-      "AstroNvim/astrocommunity",
-      import = "astrocommunity.color.modes-nvim",
-    },
-    {
-      "AstroNvim/astrocommunity",
-      import = "astrocommunity.color.nvim-highlight-colors",
-    },
-    {
-      "AstroNvim/astrocommunity",
-      import = "astrocommunity.completion.nvim-cmp",
-    },
-    {
-      "AstroNvim/astrocommunity",
-      import = "astrocommunity.diagnostics.trouble-nvim",
-    },
-    {
-      "AstroNvim/astrocommunity",
-      import = "astrocommunity.editing-support.bigfile-nvim",
-    },
-    {
-      "AstroNvim/astrocommunity",
-      import = "astrocommunity.editing-support.nvim-treesitter-context",
-    },
-    {
-      "AstroNvim/astrocommunity",
-      import = "astrocommunity.editing-support.rainbow-delimiters-nvim",
-    },
-    {
-      "AstroNvim/astrocommunity",
-      import = "astrocommunity.editing-support.todo-comments-nvim",
-    },
-    {
-      "AstroNvim/astrocommunity",
-      import = "astrocommunity.git.diffview-nvim",
-    },
-    {
-      "AstroNvim/astrocommunity",
-      import = "astrocommunity.markdown-and-latex.markdown-preview-nvim",
-    },
-    {
-      "AstroNvim/astrocommunity",
-      import = "astrocommunity.motion.hop-nvim",
-    },
-    {
-      "AstroNvim/astrocommunity",
-      import = "astrocommunity.motion.vim-matchup",
-    },
-    {
-      "AstroNvim/astrocommunity",
-      import = "astrocommunity.pack.cpp",
-    },
-    {
-      "AstroNvim/astrocommunity",
-      import = "astrocommunity.pack.json",
-    },
-    {
-      "AstroNvim/astrocommunity",
-      import = "astrocommunity.pack.lua",
-    },
-    {
-      "AstroNvim/astrocommunity",
-      import = "astrocommunity.pack.markdown",
-    },
-    {
-      "AstroNvim/astrocommunity",
-      import = "astrocommunity.pack.python",
-    },
-    {
-      "AstroNvim/astrocommunity",
-      import = "astrocommunity.pack.toml",
-    },
-    {
-      "AstroNvim/astrocommunity",
-      import = "astrocommunity.pack.typescript",
-    },
-    {
-      "AstroNvim/astrocommunity",
-      import = "astrocommunity.pack.yaml",
-    },
-    {
-      "AstroNvim/astrocommunity",
-      import = "astrocommunity.programming-language-support.csv-vim",
-    },
-    {
-      "AstroNvim/astrocommunity",
-      import = "astrocommunity.syntax.vim-cool",
-    },
-    {
-      "AstroNvim/astrocommunity",
-      import = "astrocommunity.utility.neodim",
-    },
+    -- {
+    --   "AstroNvim/AstroNvim",
+    --   version = "^5",
+    --   import = "astronvim.plugins",
+    -- },
+    -- {
+    --   "AstroNvim/astrocommunity",
+    --   import = "astrocommunity.bars-and-lines.dropbar-nvim",
+    -- },
+    -- {
+    --   "AstroNvim/astrocommunity",
+    --   import = "astrocommunity.code-runner.overseer-nvim",
+    -- },
+    -- {
+    --   "AstroNvim/astrocommunity",
+    --   import = "astrocommunity.color.modes-nvim",
+    -- },
+    -- {
+    --   "AstroNvim/astrocommunity",
+    --   import = "astrocommunity.color.nvim-highlight-colors",
+    -- },
+    -- {
+    --   "AstroNvim/astrocommunity",
+    --   import = "astrocommunity.completion.nvim-cmp",
+    -- },
+    -- {
+    --   "AstroNvim/astrocommunity",
+    --   import = "astrocommunity.diagnostics.trouble-nvim",
+    -- },
+    -- {
+    --   "AstroNvim/astrocommunity",
+    --   import = "astrocommunity.editing-support.bigfile-nvim",
+    -- },
+    -- {
+    --   "AstroNvim/astrocommunity",
+    --   import = "astrocommunity.editing-support.nvim-treesitter-context",
+    -- },
+    -- {
+    --   "AstroNvim/astrocommunity",
+    --   import = "astrocommunity.editing-support.rainbow-delimiters-nvim",
+    -- },
+    -- {
+    --   "AstroNvim/astrocommunity",
+    --   import = "astrocommunity.editing-support.todo-comments-nvim",
+    -- },
+    -- {
+    --   "AstroNvim/astrocommunity",
+    --   import = "astrocommunity.git.diffview-nvim",
+    -- },
+    -- {
+    --   "AstroNvim/astrocommunity",
+    --   import = "astrocommunity.markdown-and-latex.markdown-preview-nvim",
+    -- },
+    -- {
+    --   "AstroNvim/astrocommunity",
+    --   import = "astrocommunity.motion.hop-nvim",
+    -- },
+    -- {
+    --   "AstroNvim/astrocommunity",
+    --   import = "astrocommunity.motion.vim-matchup",
+    -- },
+    -- {
+    --   "AstroNvim/astrocommunity",
+    --   import = "astrocommunity.pack.cpp",
+    -- },
+    -- {
+    --   "AstroNvim/astrocommunity",
+    --   import = "astrocommunity.pack.json",
+    -- },
+    -- {
+    --   "AstroNvim/astrocommunity",
+    --   import = "astrocommunity.pack.lua",
+    -- },
+    -- {
+    --   "AstroNvim/astrocommunity",
+    --   import = "astrocommunity.pack.markdown",
+    -- },
+    -- {
+    --   "AstroNvim/astrocommunity",
+    --   import = "astrocommunity.pack.nix",
+    -- },
+    -- {
+    --   "AstroNvim/astrocommunity",
+    --   import = "astrocommunity.pack.python",
+    -- },
+    -- {
+    --   "AstroNvim/astrocommunity",
+    --   import = "astrocommunity.pack.toml",
+    -- },
+    -- {
+    --   "AstroNvim/astrocommunity",
+    --   import = "astrocommunity.pack.typescript",
+    -- },
+    -- {
+    --   "AstroNvim/astrocommunity",
+    --   import = "astrocommunity.pack.yaml",
+    -- },
+    -- {
+    --   "AstroNvim/astrocommunity",
+    --   import = "astrocommunity.programming-language-support.csv-vim",
+    -- },
+    -- {
+    --   "AstroNvim/astrocommunity",
+    --   import = "astrocommunity.syntax.vim-cool",
+    -- },
+    -- {
+    --   "AstroNvim/astrocommunity",
+    --   import = "astrocommunity.utility.neodim",
+    -- },
   },
   local_spec = true,
   profiling = {
