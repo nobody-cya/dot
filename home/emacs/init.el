@@ -477,6 +477,9 @@
 (use-package marginalia
   :hook (vertico-mode . marginalia-mode))
 
+(use-package nerd-icons-completion
+  :hook (marginalia-mode . nerd-icons-completion-mode))
+
 (use-package embark
   :bind
   (("C-." . embark-act)
@@ -550,6 +553,14 @@
   :config
   (setq neo-theme 'nerd-icons))
 
+(use-package symbols-outline
+  :commands (symbols-outline-show)
+  :config
+  (setq symbols-outline-window-position 'right))
+
+(use-package breadcrumb
+  :hook (prog-mode . breadcrumb-mode))
+
 (use-package magit
   :commands (magit))
 
@@ -617,6 +628,8 @@
     "fs" 'consult-line
     "fo" 'consult-outline
     "wo" 'ace-window
+    "tn" 'neotree-toggle
+    "lo" 'symbols-outline-show
     "/" 'evilnc-comment-or-uncomment-lines))
 
 (provide 'init)
