@@ -71,7 +71,6 @@
             "neohtop"
             "r"
             "rstudio"
-            "raycast"
             "stats"
             "visual-studio-code"
             "wezterm"
