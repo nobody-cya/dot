@@ -190,6 +190,9 @@
             uv
             wget
           ];
+          home.file.".emacs.d/init.el".source = ./home/emacs/init.el;
+          home.file.".config/nvim/init.lua".source = ./home/nvim/init.lua;
+          home.file.".config/wezterm/wezterm.lua".source = ./home/wezterm/wezterm.lua;
           programs.home-manager.enable = true;
           programs.bat.enable = true;
           programs.btop.enable = true;
