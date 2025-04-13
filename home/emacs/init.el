@@ -285,7 +285,7 @@
    ("M-p" . flymake-goto-prev-error)))
 
 (use-package doom-themes
-  :hook (after-init . (lambda () (load-theme 'doom-tokyo-night t))))
+  :hook (after-init . (lambda () (load-theme 'doom-palenight t))))
 
 (use-package doom-modeline
   :defer 5
