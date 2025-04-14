@@ -142,7 +142,7 @@
               while read -r src; do
                 app_name=$(basename "$src")
                   echo "copying $src" >&2
-                  ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
+                ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
                   done
             '';
           security.pam.services.sudo_local.touchIdAuth = true;
@@ -192,6 +192,8 @@
           home.file.".emacs.d/init.el".source = ./home/emacs/init.el;
           home.file.".config/nvim/init.lua".source = ./home/nvim/init.lua;
           home.file.".config/wezterm/wezterm.lua".source = ./home/wezterm/wezterm.lua;
+          home.file."Library/Application Support/Code/User/settings.json".source =
+            ./home/vscode/settings.json;
           programs.home-manager.enable = true;
           programs.bat.enable = true;
           programs.btop.enable = true;
