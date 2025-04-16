@@ -242,10 +242,6 @@ require("lazy").setup({
 		-- },
 		-- {
 		-- 	"LazyVim/LazyVim",
-		-- 	import = "lazyvim.plugins.extras.coding.yanky",
-		-- },
-		-- {
-		-- 	"LazyVim/LazyVim",
 		-- 	import = "lazyvim.plugins.extras.dap.core",
 		-- },
 		-- {
@@ -437,10 +433,6 @@ require("lazy").setup({
 		{
 			"AstroNvim/astrocommunity",
 			import = "astrocommunity.editing-support.todo-comments-nvim",
-		},
-		{
-			"AstroNvim/astrocommunity",
-			import = "astrocommunity.editing-support.yanky-nvim",
 		},
 		{
 			"AstroNvim/astrocommunity",
