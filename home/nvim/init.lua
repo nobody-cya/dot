@@ -512,7 +512,7 @@ require("lazy").setup({
 		},
 		{
 			"AstroNvim/astrocommunity",
-			import = "astrocommunity.pack.python",
+			import = "astrocommunity.pack.python-ruff",
 		},
 		{
 			"AstroNvim/astrocommunity",
