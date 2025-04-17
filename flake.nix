@@ -192,8 +192,6 @@
           home.file.".emacs.d/init.el".source = ./home/emacs/init.el;
           home.file.".config/nvim/init.lua".source = ./home/nvim/init.lua;
           home.file.".config/wezterm/wezterm.lua".source = ./home/wezterm/wezterm.lua;
-          home.file."Library/Application Support/Code/User/settings.json".source =
-            ./home/vscode/settings.json;
           programs.home-manager.enable = true;
           programs.bat.enable = true;
           programs.btop.enable = true;
