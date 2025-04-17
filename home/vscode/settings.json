@@ -7,7 +7,7 @@
     "editor.cursorSurroundingLines": 15,
     "editor.defaultColorDecorators": "always",
     "editor.fontFamily": "'JetBrainsMono Nerd Font', Monaco, Consolas",
-    "editor.fontSize": 15,
+    "editor.fontSize": 14,
     "editor.fontLigatures": true,
     "editor.fontWeight": "500",
     "editor.guides.bracketPairs": true,
@@ -19,13 +19,28 @@
     "editor.minimap.enabled": false,
     "editor.tabSize": 2,
     "editor.smoothScrolling": true,
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": [
+                    "comment",
+                    "comment.block",
+                    "comment.block.documentation",
+                    "comment.line"
+                ],
+                "settings": {
+                    "fontStyle": "italic bold"
+                }
+            }
+        ]
+    },
     "explorer.sortOrder": "type",
     "extensions.experimental.affinity": {
         "vscodevim.vim": 1,
     },
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 2500,
-    "window.zoomLevel": -0.75,
+    "window.zoomLevel": -0.7,
     "workbench.startupEditor": "none",
     "workbench.settings.editor": "json",
     "workbench.list.smoothScrolling": true,
