@@ -306,10 +306,6 @@ require("lazy").setup({
 		-- },
 		-- {
 		-- 	"LazyVim/LazyVim",
-		-- 	import = "lazyvim.plugins.extras.lang.nix",
-		-- },
-		-- {
-		-- 	"LazyVim/LazyVim",
 		-- 	import = "lazyvim.plugins.extras.lang.python",
 		-- },
 		-- {
@@ -497,10 +493,6 @@ require("lazy").setup({
 		{
 			"AstroNvim/astrocommunity",
 			import = "astrocommunity.pack.markdown",
-		},
-		{
-			"AstroNvim/astrocommunity",
-			import = "astrocommunity.pack.nix",
 		},
 		{
 			"AstroNvim/astrocommunity",
