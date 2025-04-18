@@ -307,6 +307,11 @@
   :defer 5
   :hook (doom-modeline-mode . solaire-global-mode))
 
+(use-package hide-mode-line
+  :hook
+  (neotree-mode . hide-mode-line-mode)
+  (completion-list-mode . hide-mode-line-mode))
+
 (use-package indent-bars
   :hook ((prog-mode yaml-mode) . indent-bars-mode)
   :config
