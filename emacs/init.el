@@ -610,7 +610,9 @@
   :commands (vundo))
 
 (use-package minimap
-  :commands (minimap))
+  :commands (minimap)
+  :config
+  (setq minimap-window-location 'right))
 
 (use-package exec-path-from-shell
   :defer 10
@@ -642,7 +644,7 @@
     "wo" 'ace-window
     "tn" 'neotree-toggle
     "tt" 'eat
-    "tm" 'minimap
+    "tm" 'minimap-mode
     "lo" 'symbols-outline-show
     "/" 'evilnc-comment-or-uncomment-lines))
 
