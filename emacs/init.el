@@ -282,7 +282,9 @@
   :hook (prog-mode . flymake-mode)
   :bind
   (("M-n" . flymake-goto-next-error)
-   ("M-p" . flymake-goto-prev-error)))
+   ("M-p" . flymake-goto-prev-error))
+  :config
+  (setq flymake-fringe-indicator-position 'right-fringe))
 
 (use-package doom-themes
   :hook (after-init . (lambda () (load-theme 'doom-palenight t))))
@@ -301,17 +303,16 @@
 (use-package mode-line-bell
   :hook (doom-modeline-mode . mode-line-bell-mode))
 
+(use-package solaire-mode
+  :defer 5
+  :hook (doom-modeline-mode . solaire-global-mode))
+
 (use-package indent-bars
   :hook ((prog-mode yaml-mode) . indent-bars-mode)
   :config
   (setq indent-bars-color '(highlight :face-fg t :blend 0.225))
   (setq indent-bars-no-descend-string t)
   (setq indent-bars-prefer-character t))
-
-(use-package solaire-mode
-  :defer 5
-  :config
-  (solaire-global-mode))
 
 (use-package beacon
   :hook (after-init . beacon-mode)
@@ -592,13 +593,24 @@
 
 (use-package cmake-mode)
 (use-package go-mode)
-(use-package nix-mode)
 (use-package typescript-mode)
 (use-package yaml-mode)
 (use-package csv-mode)
 (use-package toml-mode)
 (use-package web-mode)
 (use-package emmet-mode)
+
+(use-package scratch
+  :commands (scratch))
+
+(use-package eat
+  :commands (eat))
+
+(use-package vundo
+  :commands (vundo))
+
+(use-package minimap
+  :commands (minimap))
 
 (use-package exec-path-from-shell
   :defer 10
@@ -615,11 +627,11 @@
     :states '(normal visual))
   (spc-leader
     "SPC" 'execute-extended-command
-    "tt" 'emacs-init-time
     "ff" 'find-file
     "gw" 'avy-goto-word-0
     "gl" 'avy-goto-line
     "gt" 'avy-goto-char-timer
+    "gs" 'scratch
     "fF" 'consult-flymake
     "fb" 'consult-buffer
     "fw" 'consult-ripgrep
@@ -629,6 +641,8 @@
     "fo" 'consult-outline
     "wo" 'ace-window
     "tn" 'neotree-toggle
+    "tt" 'eat
+    "tm" 'minimap
     "lo" 'symbols-outline-show
     "/" 'evilnc-comment-or-uncomment-lines))
 
